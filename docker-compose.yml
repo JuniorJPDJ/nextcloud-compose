@@ -21,7 +21,6 @@ services:
       - ./nextcloud:/var/www/html
     environment:
       - POSTGRES_HOST=postgres
-      - POSTGRES_DB=nextcloud
       - REDIS_HOST=redis
     env_file:
       - postgres.env
@@ -41,7 +40,8 @@ services:
       - app
 
   cron:
-    image: nextcloud:fpm-alpine
+    #image: nextcloud:fpm-alpine
+	build: ./app
     restart: unless-stopped
     volumes:
       - ./nextcloud:/var/www/html
