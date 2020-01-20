@@ -41,7 +41,7 @@ services:
 
   cron:
     #image: nextcloud:fpm-alpine
-	build: ./app
+    build: ./app
     restart: unless-stopped
     volumes:
       - ./nextcloud:/var/www/html
